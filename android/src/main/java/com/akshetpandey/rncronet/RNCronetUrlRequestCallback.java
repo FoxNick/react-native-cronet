@@ -91,7 +91,7 @@ class RNCronetUrlRequestCallback extends UrlRequest.Callback {
     Headers.Builder headerBuilder = new Headers.Builder();
     for (Map.Entry<String, String> entry : headers) {
       try {
-        if (entry.getKey().equalsIgnoreCase("content-encoding")) {
+        if ("content-encoding".equalsIgnoreCase(entry.getKey())) {
           // Strip all content encoding headers as decoding is done handled by cronet
           continue;
         }
